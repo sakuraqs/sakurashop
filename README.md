@@ -1,18 +1,18 @@
 环境：eclipse，SQLserver2008，jstl，BOOKSTRAP，Tomcat9.0<br>
 数据库用的是sqlserver！！<br>
 com.lmonkey<br>
-   dao:连接数据库<br>
-   entity:实例化<br>
-   filter:过滤器<br>
-   service：dao层的增删改查<br>
-   servlet：接收各类信息的中转站<br>
-   utils：工具包<br>
+&nbsp;&nbsp;   dao:连接数据库<br>
+&nbsp;&nbsp;   entity:实例化<br>
+&nbsp;&nbsp;   filter:过滤器<br>
+&nbsp;&nbsp;   service：dao层的增删改查<br>
+&nbsp;&nbsp;   servlet：接收各类信息的中转站<br>
+&nbsp;&nbsp;   utils：工具包<br>
  manger:<br>
-   后台的用户、产品等页面<br>
+ &nbsp;&nbsp;  后台的用户、产品等页面<br>
 jsp:<br>
-   前台页面<br>
+ &nbsp;&nbsp;  前台页面<br>
 css：<br>
-   样式表<br>
+ &nbsp;&nbsp;  样式表<br>
 js：<br>
-   function.js:注册页面验证<br>
+ &nbsp;&nbsp;  function.js:注册页面验证<br>
 登录与支付：给了一部分代码和详细的文档。
