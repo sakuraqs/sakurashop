@@ -16,3 +16,4 @@ css：<br>
 js：<br>
  &nbsp;&nbsp;&nbsp;&nbsp;     function.js:注册页面验证<br>
 登录与支付：给了一部分代码和详细的文档。
+数据库：数据库中创建的表
