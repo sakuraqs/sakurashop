@@ -1,18 +1,18 @@
-环境：eclipse，SQLserver2008，jstl，BOOKSTRAP，Tomcat9.0
-数据库用的是sqlserver！！
-com.lmonkey
-   dao:连接数据库
-   entity:实例化
-   filter:过滤器
-   service：dao层的增删改查
-   servlet：接收各类信息的中转站
-   utils：工具包
- manger:
-   后台的用户、产品等页面
-jsp:
-   前台页面
-css：
-   样式表
-js：
-   function.js:注册页面验证
+环境：eclipse，SQLserver2008，jstl，BOOKSTRAP，Tomcat9.0<br>
+数据库用的是sqlserver！！<br>
+com.lmonkey<br>
+   dao:连接数据库<br>
+   entity:实例化<br>
+   filter:过滤器<br>
+   service：dao层的增删改查<br>
+   servlet：接收各类信息的中转站<br>
+   utils：工具包<br>
+ manger:<br>
+   后台的用户、产品等页面<br>
+jsp:<br>
+   前台页面<br>
+css：<br>
+   样式表<br>
+js：<br>
+   function.js:注册页面验证<br>
 登录与支付：给了一部分代码和详细的文档。
