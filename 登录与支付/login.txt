@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.1.11.1.min.js"></script>
+    <style>
+		
+    </style>
+	
+</head>
+<body>
+<div class="register_head_on">
+
+</div>
+<div class="register_head">
+    <a href="index.html"><img src="img/logo.jpg" alt=""></a>
+    <div class="register_head_right">
+        <p class="register_head_right_p1">小 米 商 城</p>
+        <p class="register_head_right_p2">让每个人都享受科技乐趣</p>
+    </div>
+
+</div>
+
+<div class="register">
+    <div class="register_boby">
+        <div class="register_boby_min">
+            <div class="register_boby_no1">
+                <div class="register_boby_no1_in">
+                    <span style="color: #ff6700">手机短信登录 </span>
+                </div>
+            </div>
+            <div class="register_boby_no2">
+                <input type="text" placeholder="手机号码">
+                <input name="code" type="password" placeholder="密码" style="width: 44%; float: left; margin-left: 17px">
+                <input id="btn" type="button" value="发送短信" style="width: 40%; float: left; height: 50px;" />
+                <div style="clear: both;"></div>
+                <div id="btn1" class="register_boby_no2_div">
+                    <span>登录</span>
+                </div>
+            </div>
+            <div class="register_boby_no3">
+                <a href="javascript:void(0);" style="color: #ff6700">手机短信登录/注册</a>
+                <span class="register_boby_no3_span">
+                    <a href="avascript:void(0);">立即注册</a>
+                    <span>|</span>
+                    <a href="avascript:void(0);">忘记密码?</a>
+                </span>
+
+            </div>
+            <div class="register_boby_no4">
+                <img src="img/register02.jpg" alt="">
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<div class="register_foot">
+    <img  src="img/register03.jpg" alt="">
+</div>
+<script type="text/javascript">
+	var id;
+	$("#btn").click(function(){
+		// 1. 非空校验
+		var phone_number = $("input[type=text]").val().trim();
+		if(phone_number==null || phone_number==""){
+			alert("请输入手机号");
+			return;
+		}
+		
+		// 2. 手机号是否被注册  (注册就发送  没注册提示)
+		$.get("user",{"method":"checkPhone","phone_number":phone_number},function(obj){
+			// 返回结果
+			if(obj){
+				// 手机号已被注册   倒计时
+				// 1. 倒计时
+				id = setInterval("readSecond()",1000); // 循环定时器
+			}else{
+				// 手机号 没注册  提示信息
+				alert("该号码未注册");
+			}
+			
+		},"json");
+				
+	})
+	// 读秒操作
+	var time = 60;
+	function readSecond(){
+		// 将按钮的内容 变成 具体数字
+		// $("#btn").val(60);
+		if(time > 1){
+			// 倒计时
+			time--;
+			// 按钮上数字的倒计时
+			$("#btn").val(time);
+			// 按钮不可点
+			$("#btn").attr("disabled","disabled");
+			
+		}else{
+			// 1. 停止倒计时
+			clearInterval(id);
+			// 2. 按钮上值改变
+			$("#btn").val("重新发送短信");
+			
+			// 3. 将time的值重置了60s
+			time = 60;
+			
+			// 4. 将按钮恢复可点
+			$("#btn").removeAttr("disabled");
+		}	
+	}
+	
+	
+	// 点击登录 校验手机号 和验证码
+	$("#btn1").click(function(){
+		// 用户输入的验证码
+		var code = $("input[name=code]").val().trim();
+		
+		// 非空校验
+		if(code==null || code==""){
+			alert("请输入验证码");
+			return;
+		}
+		
+		// 通过后台校验验证码
+		$.get("user",{"method":"checkCode","code":code},function(obj){
+			//alert(obj);
+			if(obj){
+				// 登录成功  跳转首页
+				window.location.href = "index?method=getData";
+			}else{
+				// 登录失败 
+				alert("请输入正确的验证码");
+			}
+		
+		},"json");
+		
+		
+	});
+	
+	
+</script>
+
+</body>
+</html>
