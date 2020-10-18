@@ -1,5 +1,6 @@
 环境：eclipse，SQLserver2008，jstl，BOOKSTRAP，Tomcat9.0<br>
 数据库用的是sqlserver！！<br>
+<h3>shop:<br><h3>
 com.lmonkey<br>
 &nbsp;&nbsp;&nbsp;&nbsp;      dao:连接数据库<br>
 &nbsp;&nbsp;&nbsp;&nbsp;      entity:实例化<br>
@@ -15,7 +16,7 @@ css：<br>
  &nbsp;&nbsp;&nbsp;&nbsp;     样式表<br>
 js：<br>
  &nbsp;&nbsp;&nbsp;&nbsp;     function.js:注册页面验证<br>
-登录与支付：给了一部分代码和详细的文档。<br>
+登录与支付：登录与支付的一部分代码和详细的文档。<br>
 数据库：数据库中创建的表。
 
 
